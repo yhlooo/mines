@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Title</title>
+  <link href="./assets/stylesheets/bootstrap.css" rel="stylesheet">
+  <link href="./assets/stylesheets/main.css" rel="stylesheet">
+</head>
+<body style="background-color: #fdfc23;">
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <iframe class="content" src="./contents/difficulty.html" id="content"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- JavaScripts -->
+<script src="./assets/javascripts/jquery-3.3.1.js"></script>
+<script src="./assets/javascripts/bootstrap.js"></script>
+<script>
+  $(document).ready(function() {
+      function resize_iframe(elem) {
+          elem.height($(window).height() - 8);
+      }
+      $(window).resize(function() {
+          resize_iframe($('#content'));
+      });
+      resize_iframe($('#content'));
+  });
+</script>
+</body>
+</html>
