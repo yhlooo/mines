@@ -1,9 +1,67 @@
+@import "difficulty.less";
 * {
   margin: 0;
   padding: 0;
   border: 0;
+  font-family: "Ubuntu";
+  color: @font-color;
+  font-size: 14.2px;
 }
+body.main {
+  background-color: @main-bg-color;
+  &.mines {
+    padding: 20px 18px;
+  }
+}
+div.mines {
+  @mines-menu-width: 174px;
+  height: 100%;
+  float: left;
+  &.mines-field {
+    width: calc(100% - @mines-menu-width);
+    //background-color: #3e8f3e;
+    table {
+      height: 100%;
+      width: 100%;
+      td {
+        border-radius: 9px;
+        border: 4px solid @main-bg-color;
+        background-color: @cell-color;
+        &:hover {
+          background-color: @cell-hover-color;
+        }
+      }
+    }
 
+  }
+  &.mines-menu {
+    @menu-top-height: 120px;
+    @menu-bottom-height: 186px;
+    width: @mines-menu-width;
+    div.menu-top {
+      height: @menu-top-height;
+      padding-left: 18px;
+      div.info-value {
+        margin: 3px 0 14px;
+      }
+    }
+    div.menu-bottom {
+      height: @menu-bottom-height;
+      position: relative;
+      top: calc(100% - @menu-top-height - @menu-bottom-height);
+      padding-left: 24px;
+      button {
+        height: 58px;
+        width: 148px;
+        margin-bottom: 6px;
+        .default-btn;
+      }
+    }
+  }
+
+}
 iframe.content {
   width: 100%;
 }
+
+

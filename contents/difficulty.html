@@ -3,18 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <title>Title</title>
+  <title>Difficulty</title>
   <link href="../assets/stylesheets/bootstrap.css" rel="stylesheet">
   <link href="../assets/stylesheets/main.css" rel="stylesheet">
 </head>
-<body>
-<div class="container-fixed-ratio center-block" style="background-color: #0f0f0f;" ratio-y="1" ratio-x="1" id="container">
+<body class="main">
+<div class="container-fixed-ratio center-block" ratio-y="1" ratio-x="1" id="container">
   <div class="container-fluid">
     <div class="row">
-      <div class="diff-block col-xs-6" style="background-color: #31b0d5;"></div>
-      <div class="diff-block col-xs-6" style="background-color: #0031d5;"></div>
-      <div class="diff-block col-xs-6" style="background-color: #31b012;"></div>
-      <div class="diff-block col-xs-6" style="background-color: #ffb0d5;"></div>
+      <div class="diff-block col-xs-6">
+        <button class="diff-btn" id="diff-88">
+          <img src="../assets/image/diff-88.png">
+        </button>
+      </div>
+      <div class="diff-block col-xs-6">
+        <button class="diff-btn" id="diff-1616">
+          <img src="../assets/image/diff-1616.png">
+        </button>
+      </div>
+      <div class="diff-block col-xs-6">
+        <button class="diff-btn" id="diff-3030">
+          <img src="../assets/image/diff-3030.png">
+        </button>
+      </div>
+      <div class="diff-block col-xs-6">
+        <button class="diff-btn" id="diff-custom">
+          <img src="../assets/image/diff-custom.png">
+        </button>
+      </div>
     </div>
   </div>
 </div>
@@ -33,16 +49,16 @@
           let win_x = $(window).width();
           // console.log(win_y, win_x);
           if (win_x >= win_y / ratio_y * ratio_x) {
-              elem.height(win_y);
-              elem.width(win_y / ratio_y * ratio_x);
+              elem.height(win_y - 20);
+              elem.width((win_y - 20) / ratio_y * ratio_x);
           }
           else {
-              elem.height(win_x / ratio_x * ratio_y);
-              elem.width(win_x);
+              elem.height((win_x - 20) / ratio_x * ratio_y);
+              elem.width(win_x - 20);
           }
-          elem.css('margin-top', (win_y - elem.height()) / 2);
+          elem.css('margin-top', (win_y - elem.height() - 20) / 2);
           $('div.diff-block').each(function() {
-              $(this).height(elem.height() / 2);
+              $(this).height(elem.height() / 2 - 20);
           })
       }
       resize_container($('#container'));
