@@ -1,5 +1,7 @@
 # keybrl-mines
 
+**未完成！！**
+
 点击链接开始游戏 [https://mines.keybrl.com/](https://mines.keybrl.com/)
 
 *通过浏览器，畅玩经典游戏，从雷区中清除隐藏的地雷*
