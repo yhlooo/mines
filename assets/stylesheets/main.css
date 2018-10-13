@@ -46,26 +46,30 @@ body.main {
   background-color: #f2f1f0;
 }
 body.main.mines {
-  padding: 20px 18px;
+  padding: 18px 18px 22px;
 }
 div.mines {
   height: 100%;
   float: left;
 }
-div.mines.mines-field {
+div.mines.minefield {
   width: calc(100% - 174px);
 }
-div.mines.mines-field table {
+div.mines.minefield table {
   height: 100%;
   width: 100%;
 }
-div.mines.mines-field table td {
+div.mines.minefield table td {
   border-radius: 9px;
   border: 4px solid #f2f1f0;
   background-color: #babdb6;
 }
-div.mines.mines-field table td:hover {
+div.mines.minefield table td:hover {
   background-color: #d3d7cf;
+}
+div.mines.minefield table td.active {
+  background: url('../image/default/mine.svg') no-repeat center;
+  background-size: 80%;
 }
 div.mines.mines-menu {
   width: 174px;

@@ -10,14 +10,14 @@
 body.main {
   background-color: @main-bg-color;
   &.mines {
-    padding: 20px 18px;
+    padding: 18px 18px 22px;
   }
 }
 div.mines {
   @mines-menu-width: 174px;
   height: 100%;
   float: left;
-  &.mines-field {
+  &.minefield {
     width: calc(100% - @mines-menu-width);
     //background-color: #3e8f3e;
     table {
@@ -29,6 +29,12 @@ div.mines {
         background-color: @cell-color;
         &:hover {
           background-color: @cell-hover-color;
+        }
+        &.active {
+          background: url('../image/default/mine.svg') no-repeat center;
+          background-size: 80%;
+
+          //background-color: @cell-active-color;
         }
       }
     }

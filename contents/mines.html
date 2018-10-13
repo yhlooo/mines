@@ -3,122 +3,78 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <title>Difficulty</title>
+  <title>Mine</title>
   <link href="../assets/stylesheets/bootstrap.css" rel="stylesheet">
   <link href="../assets/stylesheets/main.css" rel="stylesheet">
+
+  <script src="../assets/javascripts/vue.js"></script>
 </head>
 <body class="main mines">
-<div class="mines mines-field">
-  <table>
-    <tr>
-      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-    </tr>
-    <tr>
-      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-    </tr>
-    <tr>
-      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-    </tr>
-    <tr>
-      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-    </tr>
-    <tr>
-      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-    </tr>
-    <tr>
-      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-    </tr>
-    <tr>
-      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-    </tr>
-    <tr>
-      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-    </tr>
-    <tr>
-      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-    </tr>
-    <tr>
-      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-    </tr>
-    <tr>
-      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-    </tr>
-    <tr>
-      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-    </tr>
-    <tr>
-      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-    </tr>
-    <tr>
-      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-    </tr>
-    <tr>
-      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-    </tr>
-    <tr>
-      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-    </tr>
-  </table>
-</div>
-<div class="mines mines-menu">
-  <div class="menu-top text-center">
-    <div><img src="../assets/image/flag32.png"></div>
-    <div class="info-value"><span>0</span>/<span>10</span></div>
-    <div><img src="../assets/image/clock32.png"></div>
-    <div class="info-value">00:00</div>
+<div class="center-block" id="container">
+  <div class="mines minefield">
+    <table id="minefield">
+      <tr v-for="row in minefield">
+        <td v-for="col in row" v-bind:id="col.id"></td>
+      </tr>
+    </table>
   </div>
-  <div class="menu-bottom">
-    <button>Start Over</button>
-    <button>Change Difficulty</button>
-    <button>Pause</button>
+  <div class="mines mines-menu">
+    <div class="menu-top text-center">
+      <div><img src="../assets/image/flag32.png"></div>
+      <div class="info-value"><span>0</span>/<span>10</span></div>
+      <div><img src="../assets/image/clock32.png"></div>
+      <div class="info-value">00:00</div>
+    </div>
+    <div class="menu-bottom">
+      <button>Start Over</button>
+      <button>Change Difficulty</button>
+      <button>Pause</button>
+    </div>
   </div>
 </div>
+
 
 
 <script src="../assets/javascripts/jquery-3.3.1.js"></script>
 <script src="../assets/javascripts/bootstrap.js"></script>
+<script src="../assets/javascripts/mines.js"></script>
 <script>
+  let container_min_width = 30 * minefield_width + 174;
+  let container_min_height = 30 * minefield_height;
   $(window).ready(function() {
-      function max_body() {
-          $('body.main')
-              .height($(window).height() - 40)
-              .width($(window).width() - 36);
+      // 初始化雷区
+      let minefield_vue = new Vue({
+          el: '#minefield',
+          data: {
+              minefield: minefield
+          }
+      });
+      init_mines();
 
-      }
-      max_body();
-      $(window).resize(max_body);
+
+      // 限制窗口最小大小
+      $('#container').css({
+          'min-width': container_min_width,
+          'min-height': container_min_height
+      });
+      $(window).resize(function() {
+          // 使main（body）最大化
+          let container_height = $(window).height() - 40;
+          let container_width = $(window).width() - 36;
+          let container_should_height = (container_width - 174) / minefield_width * minefield_height;
+          let container_should_width = (container_height) / minefield_height * minefield_width + 174;
+          if (container_should_height > container_height) {
+              container_width = container_should_width;
+          }
+          else {
+              container_height = container_should_height;
+          }
+          $('#container')
+              .height(container_height)
+              .width(container_width)
+              .css('margin-top', ($(window).height() - container_height) / 2 - 20);
+      }).resize();
+
   });
 </script>
 </body>
