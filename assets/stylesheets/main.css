@@ -3,6 +3,7 @@
   border: 1px solid;
   border-color: #b7b7b7 #b7b7b7 #959595 #b7b7b7;
   background: linear-gradient(to bottom, #ffffff, #eae8e7);
+  color: #4c4c4c;
 }
 .default-btn:hover {
   border-color: #b7b7b7 #a5a5a5 #8d8d8d #a5a5a5;
@@ -11,6 +12,11 @@
 .default-btn:active {
   border-color: #df835f #cb6d46 #824e24 #cb6c46;
   background: linear-gradient(to bottom, #dcdcdc, #f5f5f5);
+}
+.default-btn:disabled {
+  border-color: #cacaca;
+  background: #efeeee;
+  color: #97948f;
 }
 div.container-fixed-ratio {
   padding: 10px;
@@ -25,6 +31,7 @@ button.diff-btn {
   border: 1px solid;
   border-color: #b7b7b7 #b7b7b7 #959595 #b7b7b7;
   background: linear-gradient(to bottom, #ffffff, #eae8e7);
+  color: #4c4c4c;
 }
 button.diff-btn:hover {
   border-color: #b7b7b7 #a5a5a5 #8d8d8d #a5a5a5;
@@ -33,6 +40,11 @@ button.diff-btn:hover {
 button.diff-btn:active {
   border-color: #df835f #cb6d46 #824e24 #cb6c46;
   background: linear-gradient(to bottom, #dcdcdc, #f5f5f5);
+}
+button.diff-btn:disabled {
+  border-color: #cacaca;
+  background: #efeeee;
+  color: #97948f;
 }
 * {
   margin: 0;
@@ -67,9 +79,45 @@ div.mines.minefield table td {
 div.mines.minefield table td:hover {
   background-color: #d3d7cf;
 }
-div.mines.minefield table td.active {
-  background: url('../image/default/mine.svg') no-repeat center;
+div.mines.minefield table td:active {
+  background-color: #c7cac3;
+}
+div.mines.minefield table td.opened {
   background-size: 80%;
+  background-color: #dededc;
+}
+div.mines.minefield table td.opened.mine1 {
+  background: url('../image/default/1mines.svg') no-repeat center;
+}
+div.mines.minefield table td.opened.mine2 {
+  background: url('../image/default/2mines.svg') no-repeat center;
+}
+div.mines.minefield table td.opened.mine3 {
+  background: url('../image/default/3mines.svg') no-repeat center;
+}
+div.mines.minefield table td.opened.mine4 {
+  background: url('../image/default/4mines.svg') no-repeat center;
+}
+div.mines.minefield table td.opened.mine5 {
+  background: url('../image/default/5mines.svg') no-repeat center;
+}
+div.mines.minefield table td.opened.mine6 {
+  background: url('../image/default/6mines.svg') no-repeat center;
+}
+div.mines.minefield table td.opened.mine7 {
+  background: url('../image/default/7mines.svg') no-repeat center;
+}
+div.mines.minefield table td.opened.mine8 {
+  background: url('../image/default/8mines.svg') no-repeat center;
+}
+div.mines.minefield table td.opened.mine,
+div.mines.minefield table td.opened.exploded {
+  background: url('../image/default/exploded.svg') no-repeat center;
+}
+div.mines.minefield table.pause td {
+  border-radius: 0;
+  background: #babdb6;
+  border-color: #babdb6;
 }
 div.mines.mines-menu {
   width: 174px;
@@ -95,6 +143,7 @@ div.mines.mines-menu div.menu-bottom button {
   border: 1px solid;
   border-color: #b7b7b7 #b7b7b7 #959595 #b7b7b7;
   background: linear-gradient(to bottom, #ffffff, #eae8e7);
+  color: #4c4c4c;
 }
 div.mines.mines-menu div.menu-bottom button:hover {
   border-color: #b7b7b7 #a5a5a5 #8d8d8d #a5a5a5;
@@ -103,6 +152,11 @@ div.mines.mines-menu div.menu-bottom button:hover {
 div.mines.mines-menu div.menu-bottom button:active {
   border-color: #df835f #cb6d46 #824e24 #cb6c46;
   background: linear-gradient(to bottom, #dcdcdc, #f5f5f5);
+}
+div.mines.mines-menu div.menu-bottom button:disabled {
+  border-color: #cacaca;
+  background: #efeeee;
+  color: #97948f;
 }
 iframe.content {
   width: 100%;

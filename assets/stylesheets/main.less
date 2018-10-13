@@ -30,11 +30,28 @@ div.mines {
         &:hover {
           background-color: @cell-hover-color;
         }
-        &.active {
-          background: url('../image/default/mine.svg') no-repeat center;
+        &:active {
+          background-color: mix(@cell-hover-color, @cell-color);
+        }
+        &.opened {
+          &.mine1 { background: @cell-1mines-bg; }
+          &.mine2 { background: @cell-2mines-bg; }
+          &.mine3 { background: @cell-3mines-bg; }
+          &.mine4 { background: @cell-4mines-bg; }
+          &.mine5 { background: @cell-5mines-bg; }
+          &.mine6 { background: @cell-6mines-bg; }
+          &.mine7 { background: @cell-7mines-bg; }
+          &.mine8 { background: @cell-8mines-bg; }
+          &.mine, &.exploded { background: @cell-exploded-bg; }
           background-size: 80%;
-
-          //background-color: @cell-active-color;
+          background-color: @cell-opened-color;
+        }
+      }
+      &.pause {
+        td {
+          border-radius: 0;
+          background: @cell-color;
+          border-color: @cell-color;
         }
       }
     }

@@ -14,7 +14,7 @@
   <div class="mines minefield">
     <table id="minefield">
       <tr v-for="row in minefield">
-        <td v-for="col in row" v-bind:id="col.id"></td>
+        <td v-for="col in row" v-bind:id="col.id" v-bind:onclick="'actions(' + col.row_num + ', ' + col.col_num + ', 0)'" v-bind:onmouseup="'actions(' + col.row_num + ', ' + col.col_num + ', 1)'" oncontextmenu="return false;">
       </tr>
     </table>
   </div>
@@ -26,9 +26,9 @@
       <div class="info-value">00:00</div>
     </div>
     <div class="menu-bottom">
-      <button>Start Over</button>
+      <button disabled>Start Over</button>
       <button>Change Difficulty</button>
-      <button>Pause</button>
+      <button onclick="pause()" disabled>Pause</button>
     </div>
   </div>
 </div>
@@ -49,7 +49,7 @@
               minefield: minefield
           }
       });
-      init_mines();
+      // init_mines();
 
 
       // 限制窗口最小大小

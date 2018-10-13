@@ -1,10 +1,11 @@
 @font-color: #4c4c4c;
+@font-disabled-color: #97948f;
 @main-bg-color: #f2f1f0;
 
 @cell-color: #babdb6;
 @cell-die-color: #888a85;
 @cell-hover-color: #d3d7cf;
-@cell-active-color: #dededc;
+@cell-opened-color: #dededc;
 
 @cell-1mines-bg: url('../image/default/1mines.svg') no-repeat center;
 @cell-2mines-bg: url('../image/default/2mines.svg') no-repeat center;
@@ -24,15 +25,18 @@
 @btn-bg: linear-gradient(to bottom, #ffffff , #eae8e7);
 @btn-hover-bg: linear-gradient(to bottom, #ffffff , #f0efee);
 @btn-active-bg: linear-gradient(to bottom, #dcdcdc , #f5f5f5);
+@btn-disabled-bg: #efeeee;
 @btn-border-color: #b7b7b7 #b7b7b7 #959595 #b7b7b7;
 @btn-border-hover-color: #b7b7b7 #a5a5a5 #8d8d8d #a5a5a5;
 @btn-border-active-color: #df835f #cb6d46 #824e24 #cb6c46;
+@btn-border-disabled-color: #cacaca;
 
 .default-btn {
   border-radius: 5px;
   border: 1px solid;
   border-color: @btn-border-color;
   background: @btn-bg;
+  color: @font-color;
   &:hover {
     border-color: @btn-border-hover-color;
     background: @btn-hover-bg;
@@ -40,5 +44,10 @@
   &:active {
     border-color: @btn-border-active-color;
     background: @btn-active-bg;
+  }
+  &:disabled {
+    border-color: @btn-border-disabled-color;
+    background: @btn-disabled-bg;
+    color: @font-disabled-color;
   }
 }
