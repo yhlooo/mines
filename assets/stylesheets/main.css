@@ -76,43 +76,65 @@ div.mines.minefield table td {
   border: 4px solid #f2f1f0;
   background-color: #babdb6;
 }
-div.mines.minefield table td:hover {
-  background-color: #d3d7cf;
+div.mines.minefield table td.mine1 {
+  background: url('../image/default/1mines.svg') no-repeat center;
 }
-div.mines.minefield table td:active {
-  background-color: #c7cac3;
+div.mines.minefield table td.mine2 {
+  background: url('../image/default/2mines.svg') no-repeat center;
+}
+div.mines.minefield table td.mine3 {
+  background: url('../image/default/3mines.svg') no-repeat center;
+}
+div.mines.minefield table td.mine4 {
+  background: url('../image/default/4mines.svg') no-repeat center;
+}
+div.mines.minefield table td.mine5 {
+  background: url('../image/default/5mines.svg') no-repeat center;
+}
+div.mines.minefield table td.mine6 {
+  background: url('../image/default/6mines.svg') no-repeat center;
+}
+div.mines.minefield table td.mine7 {
+  background: url('../image/default/7mines.svg') no-repeat center;
+}
+div.mines.minefield table td.mine8 {
+  background: url('../image/default/8mines.svg') no-repeat center;
+}
+div.mines.minefield table td.flag {
+  background: url('../image/default/flag.svg') no-repeat center;
+}
+div.mines.minefield table td.incorrect {
+  background: url('../image/default/incorrect.svg') no-repeat center;
+}
+div.mines.minefield table td.maybe {
+  background: url('../image/default/maybe.svg') no-repeat center;
+}
+div.mines.minefield table td.mine {
+  background: url('../image/default/mine.svg') no-repeat center;
+}
+div.mines.minefield table td.exploded {
+  background: url('../image/default/exploded.svg') no-repeat center;
+}
+div.mines.minefield table td.overmine {
+  background: url('../image/default/overmine.svg') no-repeat center;
+}
+div.mines.minefield table td.default {
+  background-size: 80%;
+  background-color: #babdb6;
 }
 div.mines.minefield table td.opened {
   background-size: 80%;
   background-color: #dededc;
 }
-div.mines.minefield table td.opened.mine1 {
-  background: url('../image/default/1mines.svg') no-repeat center;
+div.mines.minefield table tddie {
+  background-size: 80%;
+  background-color: #888a85;
 }
-div.mines.minefield table td.opened.mine2 {
-  background: url('../image/default/2mines.svg') no-repeat center;
+div.mines.minefield table td:hover {
+  background-color: #d3d7cf;
 }
-div.mines.minefield table td.opened.mine3 {
-  background: url('../image/default/3mines.svg') no-repeat center;
-}
-div.mines.minefield table td.opened.mine4 {
-  background: url('../image/default/4mines.svg') no-repeat center;
-}
-div.mines.minefield table td.opened.mine5 {
-  background: url('../image/default/5mines.svg') no-repeat center;
-}
-div.mines.minefield table td.opened.mine6 {
-  background: url('../image/default/6mines.svg') no-repeat center;
-}
-div.mines.minefield table td.opened.mine7 {
-  background: url('../image/default/7mines.svg') no-repeat center;
-}
-div.mines.minefield table td.opened.mine8 {
-  background: url('../image/default/8mines.svg') no-repeat center;
-}
-div.mines.minefield table td.opened.mine,
-div.mines.minefield table td.opened.exploded {
-  background: url('../image/default/exploded.svg') no-repeat center;
+div.mines.minefield table td:active {
+  background-color: #c7cac3;
 }
 div.mines.minefield table.pause td {
   border-radius: 0;

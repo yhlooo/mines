@@ -27,26 +27,43 @@ div.mines {
         border-radius: 9px;
         border: 4px solid @main-bg-color;
         background-color: @cell-color;
+
+        &.mine1 { background: @cell-1mines-bg; }
+        &.mine2 { background: @cell-2mines-bg; }
+        &.mine3 { background: @cell-3mines-bg; }
+        &.mine4 { background: @cell-4mines-bg; }
+        &.mine5 { background: @cell-5mines-bg; }
+        &.mine6 { background: @cell-6mines-bg; }
+        &.mine7 { background: @cell-7mines-bg; }
+        &.mine8 { background: @cell-8mines-bg; }
+        &.flag { background: @cell-flag-bg; }
+        &.incorrect { background: @cell-incorrect-bg; }
+        &.maybe { background: @cell-maybe-bg; }
+        &.mine { background: @cell-mine-bg; }
+        &.exploded { background: @cell-exploded-bg; }
+        &.overmine { background: @cell-overmine-bg; }
+
+        &.default {
+          background-size: 80%;
+          background-color: @cell-color;
+        }
+        &.opened {
+          background-size: 80%;
+          background-color: @cell-opened-color;
+        }
+        &die {
+          background-size: 80%;
+          background-color: @cell-die-color;
+        }
+
         &:hover {
           background-color: @cell-hover-color;
         }
         &:active {
           background-color: mix(@cell-hover-color, @cell-color);
         }
-        &.opened {
-          &.mine1 { background: @cell-1mines-bg; }
-          &.mine2 { background: @cell-2mines-bg; }
-          &.mine3 { background: @cell-3mines-bg; }
-          &.mine4 { background: @cell-4mines-bg; }
-          &.mine5 { background: @cell-5mines-bg; }
-          &.mine6 { background: @cell-6mines-bg; }
-          &.mine7 { background: @cell-7mines-bg; }
-          &.mine8 { background: @cell-8mines-bg; }
-          &.mine, &.exploded { background: @cell-exploded-bg; }
-          background-size: 80%;
-          background-color: @cell-opened-color;
-        }
       }
+
       &.pause {
         td {
           border-radius: 0;

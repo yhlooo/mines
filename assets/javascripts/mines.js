@@ -3,9 +3,9 @@ let minefield_height = 16;
 let mines_num = 99;
 let status = 'ready';  // 'ready', 'playing', 'die' or 'pause'
 
-let minefield = Array();
+let minefield = [];
 for (let i = 0; i < minefield_height; i++) {
-    minefield[i] = Array();
+    minefield[i] = [];
     for (let j = 0; j < minefield_width; j++) {
         minefield[i][j] = {
             id: 'cell' + i + '-' + j,
@@ -22,8 +22,8 @@ function actions(row_num, col_num, type) {
     if (type === 0) {  // 左键
         if (status === 'ready' && mine_status !== 'flag') {
             init_mines(row_num, col_num);
-            open(row_num, col_num);
             status = 'playing';
+            open(row_num, col_num);
         }
         else if (status === 'playing') {
             if (mine_status === 'unknown' || mine_status === 'maybe') {
@@ -53,14 +53,18 @@ function init_mines(row_num, col_num) {
             let target = minefield[target_y][target_x];
             if (target.mine !== -1 && target_x !== col_num && target_y !== row_num) {
                 target.mine = -1;
-                minefield[target_y+1][target_x].mine += 1;
-                minefield[target_y-1][target_x].mine += 1;
-                minefield[target_y][target_x+1].mine += 1;
-                minefield[target_y][target_x-1].mine += 1;
-                minefield[target_y+1][target_x+1].mine += 1;
-                minefield[target_y-1][target_x-1].mine += 1;
-                minefield[target_y+1][target_x+1].mine += 1;
-                minefield[target_y-1][target_x-1].mine += 1;
+                let x_plus = target_x + 1 < minefield_width;
+                let x_sub = target_x > 0;
+                let y_plus = target_y + 1 < minefield_height;
+                let y_sub = target_y > 0;
+                if (x_plus && minefield[target_y][target_x+1].mine !== -1) minefield[target_y][target_x+1].mine += 1;
+                if (x_sub && minefield[target_y][target_x-1].mine !== -1) minefield[target_y][target_x-1].mine += 1;
+                if (y_plus && minefield[target_y+1][target_x].mine !== -1) minefield[target_y+1][target_x].mine += 1;
+                if (y_plus && x_plus && minefield[target_y+1][target_x+1].mine !== -1) minefield[target_y+1][target_x+1].mine += 1;
+                if (y_plus && x_sub && minefield[target_y+1][target_x-1].mine !== -1) minefield[target_y+1][target_x-1].mine += 1;
+                if (y_sub && minefield[target_y-1][target_x].mine !== -1) minefield[target_y-1][target_x].mine += 1;
+                if (y_sub && x_plus && minefield[target_y-1][target_x+1].mine !== -1) minefield[target_y-1][target_x+1].mine += 1;
+                if (y_sub && x_sub && minefield[target_y-1][target_x-1].mine !== -1) minefield[target_y-1][target_x-1].mine += 1;
                 break;
             }
         }
@@ -85,7 +89,7 @@ function flag(row_num, col_num) {
 
 function open(row_num, col_num) {
     let target = minefield[row_num][col_num];
-    if (target.status === 'opened') {
+    if (target.status === 'opened' || target.status === 'flag') {
         return;
     }
     target.status = 'opened';
@@ -100,37 +104,84 @@ function open(row_num, col_num) {
 
 function open_near(row_num, col_num) {
     let flags_count = 0;
-    let target = minefield[target_y][target_x];
-    flags_count += minefield[target_y][target_x+1].status === 'flag' ? 1 : 0;
-    flags_count += minefield[target_y][target_x-1].status === 'flag' ? 1 : 0;
-    flags_count += minefield[target_y+1][target_x].status === 'flag' ? 1 : 0;
-    flags_count += minefield[target_y+1][target_x+1].status === 'flag' ? 1 : 0;
-    flags_count += minefield[target_y+1][target_x-1].status === 'flag' ? 1 : 0;
-    flags_count += minefield[target_y-1][target_x].status === 'flag' ? 1 : 0;
-    flags_count += minefield[target_y-1][target_x+1].status === 'flag' ? 1 : 0;
-    flags_count += minefield[target_y-1][target_x-1].status === 'flag' ? 1 : 0;
+    let target = minefield[row_num][col_num];
+
+    let x_plus = col_num + 1 < minefield_width;
+    let x_sub = col_num > 0;
+    let y_plus = row_num + 1 < minefield_height;
+    let y_sub = row_num > 0;
+    if (x_plus) flags_count += minefield[row_num][col_num+1].status === 'flag' ? 1 : 0;
+    if (x_sub) flags_count += minefield[row_num][col_num-1].status === 'flag' ? 1 : 0;
+    if (y_plus) flags_count += minefield[row_num+1][col_num].status === 'flag' ? 1 : 0;
+    if (y_plus && x_plus) flags_count += minefield[row_num+1][col_num+1].status === 'flag' ? 1 : 0;
+    if (y_plus && x_sub) flags_count += minefield[row_num+1][col_num-1].status === 'flag' ? 1 : 0;
+    if (y_sub) flags_count += minefield[row_num-1][col_num].status === 'flag' ? 1 : 0;
+    if (y_sub && x_plus) flags_count += minefield[row_num-1][col_num+1].status === 'flag' ? 1 : 0;
+    if (y_sub && x_sub) flags_count += minefield[row_num-1][col_num-1].status === 'flag' ? 1 : 0;
+
     if (flags_count === target.mine || target.mine === 0) {
-        open(row_num, col_num + 1);
-        open(row_num, col_num - 1);
-        open(row_num + 1, col_num);
-        open(row_num + 1, col_num + 1);
-        open(row_num + 1, col_num - 1);
-        open(row_num - 1, col_num);
-        open(row_num - 1, col_num + 1);
-        open(row_num - 1, col_num - 1);
+        if (x_plus) open(row_num, col_num + 1);
+        if (x_sub) open(row_num, col_num - 1);
+        if (y_plus) open(row_num + 1, col_num);
+        if (y_plus && x_plus) open(row_num + 1, col_num + 1);
+        if (y_plus && x_sub) open(row_num + 1, col_num - 1);
+        if (y_sub) open(row_num - 1, col_num);
+        if (y_sub && x_plus) open(row_num - 1, col_num + 1);
+        if (y_sub && x_sub) open(row_num - 1, col_num - 1);
     }
     return refresh_minefield();
 }
 
 function refresh_minefield() {
-
+    $('#minefield').attr('class', status);
+    for (let i = 0; i < minefield_height; i++) {
+        for (let j = 0; j < minefield_width; j++) {
+            let cell = $('#cell' + i +  '-' + j);
+            let cell_class = [];
+            if (minefield[i][j].status === 'opened') {
+                if (minefield[i][j].mine > -1)
+                    cell_class[cell_class.length] = 'mine' + minefield[i][j].mine;
+                else
+                    cell_class[cell_class.length] = 'exploded';
+                cell_class[cell_class.length] = 'opened';
+            }
+            else {
+                if (status === 'playing') {
+                    if (minefield[i][j].status === 'flag' || minefield[i][j].status === 'maybe')
+                        cell_class[cell_class.length] = minefield[i][j].status;
+                    cell_class[cell_class.length] = 'default';
+                }
+                else if (status === 'die') {
+                    if (minefield[i][j].mine === -1 && minefield[i][j].status !== 'flag')
+                        cell_class[cell_class.length] = 'mine';
+                    else if (minefield[i][j].mine === -1 && minefield[i][j].status === 'flag')
+                        cell_class[cell_class.length] = 'flag';
+                    else if (minefield[i][j].mine !== -1 && minefield[i][j].status === 'flag')
+                        cell_class[cell_class.length] = 'incorrect';
+                    else if (minefield[i][j].status === 'maybe')
+                        cell_class[cell_class.length] = 'maybe';
+                    cell_class[cell_class.length] = 'die';
+                }
+            }
+            cell.attr('class', cell_class.join(' '));
+        }
+    }
 }
 
 
 function pause() {
-    $('#minefield').toggleClass('pause');
+    if (status === 'playing') {
+        status = 'pause';
+        $('#minefield').attr('class', 'pause');
+    }
+    else if (status === 'playing') {
+        status = 'pause';
+        $('#minefield').attr('class', 'pause');
+    }
 }
 
-function die(row_num, col_num) {
-    $('#minefield').addClass('die');
+function die() {
+    status = 'die';
+    $('#minefield').attr('class', 'die');
+    refresh_minefield();
 }
