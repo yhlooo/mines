@@ -46,6 +46,10 @@ button.diff-btn:disabled {
   background: #efeeee;
   color: #97948f;
 }
+@font-face {
+  font-family: "Ubuntu";
+  src: url("../fonts/Ubuntu-R.ttf");
+}
 * {
   margin: 0;
   padding: 0;
