@@ -48,10 +48,16 @@ div.mines {
           background-color: @cell-color;
         }
         &.opened {
+          &:hover {
+            background-color: @cell-opened-color;
+          }
           background-size: 80%;
           background-color: @cell-opened-color;
         }
-        &die {
+        &.die {
+          &:hover {
+            background-color: @cell-die-color;
+          }
           background-size: 80%;
           background-color: @cell-die-color;
         }
@@ -65,14 +71,14 @@ div.mines {
       }
 
       &.pause {
+        border-radius: 4px;
+        background: @minefield-pause-bg;
+        background-color: @cell-color;
         td {
-          border-radius: 0;
-          background: @cell-color;
-          border-color: @cell-color;
+          display: none;
         }
       }
     }
-
   }
   &.mines-menu {
     @menu-top-height: 120px;
@@ -104,4 +110,69 @@ iframe.content {
   width: 100%;
 }
 
+.dialog {
+  position: absolute;
+  margin: 0 auto;
+  z-index: auto;
+  &.default-dialog {
+    border-radius: 6px 6px 0 0;
+    box-shadow: 0 0 40px 4px #0f0f0f;
+    div.dialog-head {
+      height: 30px;
+      border-radius: 6px 6px 0 0;
+      border-top: 1px solid #626055;
+      background: @dialog-default-head-head-bg;
+    }
+    div.dialog-content {
+      padding: 8px;
+      background-color: @main-bg-color;
+      .dialog-img {
+        float: left;
+        width: 144px;
+        padding: 0 48px;
+      }
+      .dialog-mes {
+        float: left;
+        padding-right: 20px;
+        text-align: center;
+        .dialog-title {
+          margin: 0 0 10px 0;
+          font-size: 18px;
+          font-weight: bold;
+        }
+      }
+      .dialog-btn-group {
+        button {
+          width: calc(50% - 2px);
+          margin-top: 20px;
+          padding: 2px 0;
+          .default-btn;
+        }
+      }
+    }
+  }
+}
+
+footer.project-info {
+  padding: 10px 20px;
+  background-color: #1b1b1b;
+  a {
+    text-decoration: none;
+    &, &:link, &:visited {
+      text-decoration: none;
+      color: #c8c8c8;
+    }
+    &:hover {
+      text-decoration: none;
+      color: #ffffff;
+    }
+  }
+  i {
+    color: #ffffff;
+  }
+  span {
+    color: #969696;
+  }
+
+}
 

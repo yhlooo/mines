@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <title>Mine</title>
-  <link href="../assets/stylesheets/bootstrap.css" rel="stylesheet">
+  <link href="../assets/stylesheets/bootstrap.min.css" rel="stylesheet">
   <link href="../assets/stylesheets/main.css" rel="stylesheet">
 
-  <script src="../assets/javascripts/vue.js"></script>
+  <script src="../assets/javascripts/vue.min.js"></script>
 </head>
 <body class="main mines">
 <div class="center-block" id="container">
@@ -21,22 +21,40 @@
   <div class="mines mines-menu">
     <div class="menu-top text-center">
       <div><img src="../assets/image/flag32.png"></div>
-      <div class="info-value"><span>0</span>/<span>10</span></div>
+      <div class="info-value"><span id="flags_num">0</span>/<span id="mines_num">0</span></div>
       <div><img src="../assets/image/clock32.png"></div>
-      <div class="info-value">00:00</div>
+      <div class="info-value"><span id="timer">00:00</span></div>
     </div>
     <div class="menu-bottom">
-      <button disabled>Start Over</button>
-      <button>Change Difficulty</button>
-      <button onclick="pause()" disabled>Pause</button>
+      <button id="menu-btn0" onclick="start_over()" disabled>Start Over</button>
+      <button id="menu-btn1" onclick="change_diff()">Change Difficulty</button>
+      <button id="menu-btn2" onclick="pause()" disabled>Pause</button>
+    </div>
+  </div>
+</div>
+
+<div class="dialog default-dialog" id="main-dialog" hidden>
+  <div class="dialog-head"></div>
+  <div class="dialog-content">
+    <div class="dialog-img">
+      <img src="../assets/image/question.png">
+    </div>
+    <div class="dialog-mes">
+      <h3 class="dialog-title">Do you want to start a new game?</h3>
+      <p>If you start a new gamae, your current progress will be lost.</p>
+    </div>
+
+    <div class="dialog-btn-group">
+      <button id="dialog-btn0">Keep Current Game</button>
+      <button id="dialog-btn1">Start New Game</button>
     </div>
   </div>
 </div>
 
 
-
-<script src="../assets/javascripts/jquery-3.3.1.js"></script>
-<script src="../assets/javascripts/bootstrap.js"></script>
+<script src="../assets/javascripts/jquery-3.3.1.min.js"></script>
+<script src="../assets/javascripts/bootstrap.min.js"></script>
+<script src="../assets/javascripts/main.js"></script>
 <script src="../assets/javascripts/mines.js"></script>
 <script>
   let container_min_width = 30 * minefield_width + 174;
@@ -49,8 +67,7 @@
               minefield: minefield
           }
       });
-      // init_mines();
-
+      refresh_minefield();
 
       // // 限制窗口最小大小
       // $('#container').css({
@@ -74,7 +91,6 @@
               .width(container_width)
               .css('margin-top', ($(window).height() - container_height) / 2 - 20);
       }).resize();
-
   });
 </script>
 </body>

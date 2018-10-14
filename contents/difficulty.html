@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <title>Difficulty</title>
-  <link href="../assets/stylesheets/bootstrap.css" rel="stylesheet">
+  <link href="../assets/stylesheets/bootstrap.min.css" rel="stylesheet">
   <link href="../assets/stylesheets/main.css" rel="stylesheet">
 </head>
 <body class="main">
@@ -12,22 +12,22 @@
   <div class="container-fluid">
     <div class="row">
       <div class="diff-block col-xs-6">
-        <button class="diff-btn" id="diff-88">
+        <button class="diff-btn" id="diff-88" onclick="location.href = './mines.html?height=8&width=8&mines=10'">
           <img src="../assets/image/diff-88.png">
         </button>
       </div>
       <div class="diff-block col-xs-6">
-        <button class="diff-btn" id="diff-1616">
+        <button class="diff-btn" id="diff-1616" onclick="location.href = './mines.html?height=16&width=16&mines=40'">
           <img src="../assets/image/diff-1616.png">
         </button>
       </div>
       <div class="diff-block col-xs-6">
-        <button class="diff-btn" id="diff-3030">
+        <button class="diff-btn" id="diff-3030" onclick="location.href = './mines.html?height=16&width=30&mines=99'">
           <img src="../assets/image/diff-3030.png">
         </button>
       </div>
       <div class="diff-block col-xs-6">
-        <button class="diff-btn" id="diff-custom">
+        <button class="diff-btn" id="diff-custom" onclick="cust_diff()">
           <img src="../assets/image/diff-custom.png">
         </button>
       </div>
@@ -35,8 +35,8 @@
   </div>
 </div>
 
-<script src="../assets/javascripts/jquery-3.3.1.js"></script>
-<script src="../assets/javascripts/bootstrap.js"></script>
+<script src="../assets/javascripts/jquery-3.3.1.min.js"></script>
+<script src="../assets/javascripts/bootstrap.min.js"></script>
 <script>
   $(document).ready(function() {
       $(window).resize(function() {
@@ -63,6 +63,14 @@
       }
       resize_container($('#container'));
   });
+  function cust_diff() {
+      if (confirm("目前“自定义雷区”还未开发完毕，只有最基础的功能，你可以继续使用，但你需要自己保证输入是合适的。\n如果你输入的数值过大，或者完全不合理（比如 地雷数目 > 格子总数 - 9）,则可能因此导致浏览器卡死！\n是否要继续使用？")) {
+          let width = prompt("雷区宽度", "30");
+          let height = prompt("雷区高度", "16");
+          let mines = prompt("地雷数目", "99");
+          location.href = './mines.html?height=' + height + '&width=' + width + '&mines=' + mines;
+      }
+  }
 </script>
 </body>
 </html>

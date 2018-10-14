@@ -3,29 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <title>Title</title>
-  <link href="./assets/stylesheets/bootstrap.css" rel="stylesheet">
+  <title>Mines</title>
+  <link href="./assets/image/gnome-mines.png" rel="icon">
+  <link href="./assets/stylesheets/bootstrap.min.css" rel="stylesheet">
+  <link href="./assets/stylesheets/font-awesome.min.css" rel="stylesheet">
   <link href="./assets/stylesheets/main.css" rel="stylesheet">
 </head>
-<body style="background-color: #fdfc23;">
+<body>
 <section>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-xs-12">
-        <iframe class="content" src="./contents/difficulty.html" id="content"></iframe>
-      </div>
-    </div>
-  </div>
+  <iframe class="content" src="./contents/difficulty.html" id="content"></iframe>
 </section>
+<footer class="project-info text-right">
+  <span class="pull-left">Copyright &copy; <a href="https://blog.keybrl.com/">KeybrL</a> All Rights Reserved.</span>
+  <a href="https://github.com/keybrl/keybrl-mines" target="_blank"><i class="fa fa-github"></i> keybrl/keybrl-mines</a>
+</footer>
 
 
 <!-- JavaScripts -->
-<script src="./assets/javascripts/jquery-3.3.1.js"></script>
-<script src="./assets/javascripts/bootstrap.js"></script>
+<script src="./assets/javascripts/jquery-3.3.1.min.js"></script>
+<script src="./assets/javascripts/bootstrap.min.js"></script>
 <script>
   $(document).ready(function() {
       function resize_iframe(elem) {
-          elem.height($(window).height() - 8);
+          elem.height($(window).height() - 45);
       }
       $(window).resize(function() {
           resize_iframe($('#content'));
