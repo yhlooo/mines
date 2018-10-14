@@ -30,6 +30,8 @@ sudo apt install gnome-mines
 
 当你看见这个游戏的成品，你可能会觉得他完全就是 gnome-mines 的样子。如果真是这样，那我就成功了，事实上，我从一开始就打算让我的项目完全复刻 gnome-mines 的体验，尽管平台不同，很多细节难以做到一模一样，但我还是尽可能让他们相似。甚至这个项目中很多图片、图标都是直接从 gnome-mines 的项目仓库中搬过来的（如果我没有错误理解 GPLv3 的含义的话，我这么做应该是完全合法的）。
 
+![gnome-mines 和 keybrl-mines 的比较](./assets/image/compare.png "gnome-mines 和 keybrl-mines 的比较")
+
 无论如何，gnome-mines 是一个非常棒的游戏。不管你觉得我的 keybrl-mines 体验如何，我都建议你尝试一下 gnome-mines ，最简单的方法就如上面说的，安装一个 Ubuntu Desktop。或者看看这个项目，到它的Github仓库（[GNOME/gnome-mines](https://github.com/GNOME/gnome-mines)）中点个 Star。
 
 ## 为什么是 keybrl-mines
