@@ -1,3 +1,15 @@
+@font-face {
+  font-family: "Ubuntu";
+  src: url("../fonts/Ubuntu-R.ttf");
+}
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: "Ubuntu";
+  color: #4c4c4c;
+  font-size: 14.2px;
+}
 .default-btn {
   border-radius: 5px;
   border: 1px solid;
@@ -46,17 +58,110 @@ button.diff-btn:disabled {
   background: #efeeee;
   color: #97948f;
 }
-@font-face {
-  font-family: "Ubuntu";
-  src: url("../fonts/Ubuntu-R.ttf");
+.dialog {
+  position: absolute;
+  margin: 0 auto;
+  z-index: auto;
 }
-* {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-family: "Ubuntu";
+.dialog.default-dialog {
+  border-radius: 6px 6px 0 0;
+  box-shadow: 0 0 40px 4px #0f0f0f;
+}
+.dialog.default-dialog div.dialog-head {
+  padding: 0 5px;
+  min-height: 30px;
+  border-radius: 5px 5px 0 0;
+  border-top: 1px solid #626055;
+  background: linear-gradient(to bottom, #59574f, #403f3a);
+}
+.dialog.default-dialog div.dialog-head .dialog-head-title {
+  font-size: 13px;
+  color: #dfdbd2;
+  text-shadow: 0 -1px 1px #0f0f0f;
+  font-weight: bold;
+}
+.dialog.default-dialog div.dialog-head .dialog-head-title.second-level {
+  position: relative;
+  top: -4px;
+  font-size: 12.5px;
+  color: #918e87;
+  font-weight: normal;
+}
+.dialog.default-dialog div.dialog-head .dialog-head-title.single {
+  position: relative;
+  top: 3px;
+}
+.dialog.default-dialog div.dialog-head .dialog-head-btn {
+  position: absolute;
+  top: 4px;
+  right: 5px;
+  background-color: transparent;
+}
+.dialog.default-dialog div.dialog-head .dialog-head-btn.btn-done {
+  right: 10px;
+  padding: 6.5px 10px;
+  border-radius: 4px;
+  box-shadow: 0 0 2px #363932;
+  color: #ffffff;
+  text-shadow: 0 -1px 1px #0f0f0f;
+  background: linear-gradient(to bottom, #48cc5b, #48a047);
+}
+.dialog.default-dialog div.dialog-head .dialog-head-btn.btn-done:hover {
+  background: linear-gradient(to bottom, #38a047, #367e40);
+}
+.dialog.default-dialog div.dialog-head .dialog-head-btn.btn-done:active {
+  background: linear-gradient(to bottom, #3f8a49, #33693b);
+}
+.dialog.default-dialog div.dialog-content {
+  padding: 8px;
+  background-color: #f2f1f0;
+}
+.dialog.default-dialog div.dialog-content .dialog-img {
+  float: left;
+  width: 144px;
+  padding: 0 48px;
+}
+.dialog.default-dialog div.dialog-content .dialog-mes {
+  float: left;
+  padding-right: 20px;
+  text-align: center;
+}
+.dialog.default-dialog div.dialog-content .dialog-mes .dialog-title {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+.dialog.default-dialog div.dialog-content .dialog-btn-group button {
+  width: calc(50% - 2px);
+  margin-top: 20px;
+  padding: 2px 0;
+  border-radius: 5px;
+  border: 1px solid;
+  border-color: #b7b7b7 #b7b7b7 #959595 #b7b7b7;
+  background: linear-gradient(to bottom, #ffffff, #eae8e7);
   color: #4c4c4c;
-  font-size: 14.2px;
+}
+.dialog.default-dialog div.dialog-content .dialog-btn-group button:hover {
+  border-color: #b7b7b7 #a5a5a5 #8d8d8d #a5a5a5;
+  background: linear-gradient(to bottom, #ffffff, #f0efee);
+}
+.dialog.default-dialog div.dialog-content .dialog-btn-group button:active {
+  border-color: #df835f #cb6d46 #824e24 #cb6c46;
+  background: linear-gradient(to bottom, #dcdcdc, #f5f5f5);
+}
+.dialog.default-dialog div.dialog-content .dialog-btn-group button:disabled {
+  border-color: #cacaca;
+  background: #efeeee;
+  color: #97948f;
+}
+.dialog.default-dialog div.dialog-content table.rank-table thead {
+  font-weight: bold;
+}
+.dialog.default-dialog div.dialog-content table.rank-table td {
+  padding: 6px 20px;
+}
+.dialog.default-dialog div.dialog-content div.minefield-type {
+  padding: 20px 0;
 }
 body.main {
   background-color: #f2f1f0;
@@ -81,46 +186,46 @@ div.mines.minefield table td {
   background-color: #babdb6;
 }
 div.mines.minefield table td.mine1 {
-  background: url('../image/default/1mines.png') no-repeat center;
+  background: url('../image/theme_default/1mines.png') no-repeat center;
 }
 div.mines.minefield table td.mine2 {
-  background: url('../image/default/2mines.png') no-repeat center;
+  background: url('../image/theme_default/2mines.png') no-repeat center;
 }
 div.mines.minefield table td.mine3 {
-  background: url('../image/default/3mines.png') no-repeat center;
+  background: url('../image/theme_default/3mines.png') no-repeat center;
 }
 div.mines.minefield table td.mine4 {
-  background: url('../image/default/4mines.png') no-repeat center;
+  background: url('../image/theme_default/4mines.png') no-repeat center;
 }
 div.mines.minefield table td.mine5 {
-  background: url('../image/default/5mines.png') no-repeat center;
+  background: url('../image/theme_default/5mines.png') no-repeat center;
 }
 div.mines.minefield table td.mine6 {
-  background: url('../image/default/6mines.png') no-repeat center;
+  background: url('../image/theme_default/6mines.png') no-repeat center;
 }
 div.mines.minefield table td.mine7 {
-  background: url('../image/default/7mines.png') no-repeat center;
+  background: url('../image/theme_default/7mines.png') no-repeat center;
 }
 div.mines.minefield table td.mine8 {
-  background: url('../image/default/8mines.png') no-repeat center;
+  background: url('../image/theme_default/8mines.png') no-repeat center;
 }
 div.mines.minefield table td.flag {
-  background: url('../image/default/flag.png') no-repeat center;
+  background: url('../image/theme_default/flag.png') no-repeat center;
 }
 div.mines.minefield table td.incorrect {
-  background: url('../image/default/incorrect.png') no-repeat center;
+  background: url('../image/theme_default/incorrect.png') no-repeat center;
 }
 div.mines.minefield table td.maybe {
-  background: url('../image/default/maybe.png') no-repeat center;
+  background: url('../image/theme_default/maybe.png') no-repeat center;
 }
 div.mines.minefield table td.mine {
-  background: url('../image/default/mine.png') no-repeat center;
+  background: url('../image/theme_default/mine.png') no-repeat center;
 }
 div.mines.minefield table td.exploded {
-  background: url('../image/default/exploded.png') no-repeat center;
+  background: url('../image/theme_default/exploded.png') no-repeat center;
 }
 div.mines.minefield table td.overmine {
-  background: url('../image/default/overmine.png') no-repeat center;
+  background: url('../image/theme_default/overmine.png') no-repeat center;
 }
 div.mines.minefield table td.default {
   background-size: 80%;
@@ -195,63 +300,6 @@ div.mines.mines-menu div.menu-bottom button:disabled {
 }
 iframe.content {
   width: 100%;
-}
-.dialog {
-  position: absolute;
-  margin: 0 auto;
-  z-index: auto;
-}
-.dialog.default-dialog {
-  border-radius: 6px 6px 0 0;
-  box-shadow: 0 0 40px 4px #0f0f0f;
-}
-.dialog.default-dialog div.dialog-head {
-  height: 30px;
-  border-radius: 6px 6px 0 0;
-  border-top: 1px solid #626055;
-  background: linear-gradient(to bottom, #59574f, #403f3a);
-}
-.dialog.default-dialog div.dialog-content {
-  padding: 8px;
-  background-color: #f2f1f0;
-}
-.dialog.default-dialog div.dialog-content .dialog-img {
-  float: left;
-  width: 144px;
-  padding: 0 48px;
-}
-.dialog.default-dialog div.dialog-content .dialog-mes {
-  float: left;
-  padding-right: 20px;
-  text-align: center;
-}
-.dialog.default-dialog div.dialog-content .dialog-mes .dialog-title {
-  margin: 0 0 10px 0;
-  font-size: 18px;
-  font-weight: bold;
-}
-.dialog.default-dialog div.dialog-content .dialog-btn-group button {
-  width: calc(50% - 2px);
-  margin-top: 20px;
-  padding: 2px 0;
-  border-radius: 5px;
-  border: 1px solid;
-  border-color: #b7b7b7 #b7b7b7 #959595 #b7b7b7;
-  background: linear-gradient(to bottom, #ffffff, #eae8e7);
-  color: #4c4c4c;
-}
-.dialog.default-dialog div.dialog-content .dialog-btn-group button:hover {
-  border-color: #b7b7b7 #a5a5a5 #8d8d8d #a5a5a5;
-  background: linear-gradient(to bottom, #ffffff, #f0efee);
-}
-.dialog.default-dialog div.dialog-content .dialog-btn-group button:active {
-  border-color: #df835f #cb6d46 #824e24 #cb6c46;
-  background: linear-gradient(to bottom, #dcdcdc, #f5f5f5);
-}
-.dialog.default-dialog div.dialog-content .dialog-btn-group button:disabled {
-  border-color: #cacaca;
-  background: #efeeee;
-  color: #97948f;
 }
 footer.project-info {
   padding: 10px 20px;

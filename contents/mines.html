@@ -45,13 +45,12 @@
   <div class="dialog-head"></div>
   <div class="dialog-content">
     <div class="dialog-img">
-      <img src="../assets/image/question.png">
+      <img src="../assets/image/dialog/question.png">
     </div>
     <div class="dialog-mes">
       <h3 class="dialog-title">Do you want to start a new game?</h3>
       <p>If you start a new gamae, your current progress will be lost.</p>
     </div>
-
     <div class="dialog-btn-group">
       <button id="dialog-btn0">Keep Current Game</button>
       <button id="dialog-btn1">Start New Game</button>
@@ -59,6 +58,39 @@
   </div>
 </div>
 
+<div class="dialog default-dialog" id="rank-dialog">
+  <!--<div class="dialog-head text-center">-->
+    <!--<span class="dialog-head-title single">Best Times</span>-->
+    <!--<button class="dialog-head-btn"><img src="../assets/image/dialog/close_btn.png"></button>-->
+  <!--</div>-->
+  <div class="dialog-head text-center">
+    <span class="dialog-head-title">Congratulations!</span>
+    <br>
+    <span class="dialog-head-title second-level">Your score has made the top ten.</span>
+    <button class="dialog-head-btn btn-done">Done</button>
+  </div>
+  <div class="dialog-content rank">
+    <div class="minefield-type text-center">
+      Minefield: 8 x 8, 10 mines
+    </div>
+    <hr>
+    <table class="rank-table text-center" id="rank-table">
+      <thead><tr><td>Rank</td><td>Time</td><td>Player</td></tr></thead>
+      <tbody>
+      <tr><td>1</td><td>0 minutes 15 seconds</td><td>Keyboard L</td></tr>
+      <tr><td>2</td><td>0 minutes 15 seconds</td><td>Keyboard L</td></tr>
+      <tr><td>3</td><td>0 minutes 15 seconds</td><td>Keyboard L</td></tr>
+      <tr><td>4</td><td>0 minutes 15 seconds</td><td>Keyboard L</td></tr>
+      <tr><td>5</td><td>0 minutes 15 seconds</td><td>Keyboard L</td></tr>
+      <tr><td>6</td><td>0 minutes 15 seconds</td><td>Keyboard L</td></tr>
+      <tr><td>7</td><td>0 minutes 15 seconds</td><td>Keyboard L</td></tr>
+      <tr><td>8</td><td>0 minutes 15 seconds</td><td>Keyboard L</td></tr>
+      <tr><td>9</td><td>0 minutes 15 seconds</td><td>Keyboard L</td></tr>
+      <tr><td>10</td><td>0 minutes 15 seconds</td><td>Keyboard L</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
 
 <script src="../assets/javascripts/jquery-3.3.1.min.js"></script>
 <script src="../assets/javascripts/bootstrap.min.js"></script>
