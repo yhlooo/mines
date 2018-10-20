@@ -21,7 +21,8 @@ for (let i = 0; i < minefield_height; i++) {
     }
 }
 
-function actions(row_num, col_num, type) {
+function actions(event, row_num, col_num, type) {
+    let evt = event || window.event;
     let mine_status = minefield[row_num][col_num].status;
     if (type === 0) {  // 左键
         if (status === 'ready' && mine_status !== 'flag') {
@@ -38,14 +39,13 @@ function actions(row_num, col_num, type) {
             }
         }
     }
-    else if (window.event.button === 2) {  // 右键
+    else if (evt.button === 2) {  // 右键
         if (status === 'playing') {
             if (mine_status === 'unknown' || mine_status === 'flag' || mine_status === 'maybe') {
                 return flag(row_num, col_num);
             }
         }
     }
-
 }
 
 function init_mines(row_num, col_num) {
