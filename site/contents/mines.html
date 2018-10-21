@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <title>Mine</title>
-  <link href="../assets/packages/bootstrap-v3.3.7/css/bootstrap.min.css" rel="stylesheet">
-  <link href="../assets/stylesheets/main.css" rel="stylesheet">
-  <link href="../assets/packages/font-awesome-v4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/useful/bootstrap-v3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link href="//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/keybrl-mines/stylesheets/main.css" rel="stylesheet">
+  <link href="//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/useful/font-awesome-v4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
-  <!-- google analytics statement -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119555935-2"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','UA-119555935-2');</script>
 </head>
 <body class="main mines">
 <div class="loading">
@@ -25,9 +25,9 @@
   </div>
   <div class="mines mines-menu">
     <div class="menu-top text-center">
-      <div><img src="../assets/image/flag32.png"></div>
+      <div><img src="//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/keybrl-mines/image/flag32.png"></div>
       <div class="info-value"><span id="flags_num">0</span>/<span id="mines_num">0</span></div>
-      <div><img src="../assets/image/clock32.png"></div>
+      <div><img src="//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/keybrl-mines/image/clock32.png"></div>
       <div class="info-value"><span id="timer">00:00</span></div>
     </div>
     <div class="menu-bottom">
@@ -42,7 +42,7 @@
   <div class="dialog-head"></div>
   <div class="dialog-content">
     <div class="dialog-img">
-      <img src="../assets/image/dialog/question.png">
+      <img src="//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/keybrl-mines/image/dialog/question.png">
     </div>
     <div class="dialog-mes">
       <h3 class="dialog-title">Do you want to start a new game?</h3>
@@ -58,7 +58,7 @@
 <div class="dialog default-dialog" id="rank-dialog" hidden>
   <!--<div class="dialog-head text-center">-->
     <!--<span class="dialog-head-title single">Best Times</span>-->
-    <!--<button class="dialog-head-btn"><img src="../assets/image/dialog/close_btn.png"></button>-->
+    <!--<button class="dialog-head-btn"><img src="//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/keybrl-mines/image/dialog/close_btn.png"></button>-->
   <!--</div>-->
   <div class="dialog-head text-center">
     <span class="dialog-head-title">Congratulations!</span>
@@ -89,10 +89,10 @@
   </div>
 </div>
 
-<script src="../assets/packages/vue-v2.5.17/vue.min.js"></script>
-<script src="../assets/packages/jquery/jquery-3.3.1.min.js"></script>
-<script src="../assets/packages/bootstrap-v3.3.7/js/bootstrap.min.js"></script>
-<script src="../assets/javascripts/mines.js"></script>
+<script src="//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/useful/vue-v2.5.17/vue.min.js"></script>
+<script src="//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/useful/jquery/jquery-3.3.1.min.js"></script>
+<script src="//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/useful/bootstrap-v3.3.7/js/bootstrap.min.js"></script>
+<script src="//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/keybrl-mines/javascripts/mines.js"></script>
 <script>
   let container_min_width = 30 * minefield_width + 174;
   let container_min_height = 30 * minefield_height;
@@ -139,23 +139,23 @@
         }
     }
     preload(
-        '../assets/image/theme_default/1mines.png',
-        '../assets/image/theme_default/2mines.png',
-        '../assets/image/theme_default/3mines.png',
-        '../assets/image/theme_default/4mines.png',
-        '../assets/image/theme_default/5mines.png',
-        '../assets/image/theme_default/6mines.png',
-        '../assets/image/theme_default/7mines.png',
-        '../assets/image/theme_default/8mines.png',
-        '../assets/image/theme_default/exploded.png',
-        '../assets/image/theme_default/flag.png',
-        '../assets/image/theme_default/incorrect.png',
-        '../assets/image/theme_default/maybe.png',
-        '../assets/image/theme_default/mine.png',
-        '../assets/image/theme_default/overmine.png',
-        '../assets/image/pause.png'
+        '//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/keybrl-mines/image/theme_default/1mines.png',
+        '//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/keybrl-mines/image/theme_default/2mines.png',
+        '//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/keybrl-mines/image/theme_default/3mines.png',
+        '//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/keybrl-mines/image/theme_default/4mines.png',
+        '//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/keybrl-mines/image/theme_default/5mines.png',
+        '//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/keybrl-mines/image/theme_default/6mines.png',
+        '//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/keybrl-mines/image/theme_default/7mines.png',
+        '//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/keybrl-mines/image/theme_default/8mines.png',
+        '//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/keybrl-mines/image/theme_default/exploded.png',
+        '//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/keybrl-mines/image/theme_default/flag.png',
+        '//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/keybrl-mines/image/theme_default/incorrect.png',
+        '//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/keybrl-mines/image/theme_default/maybe.png',
+        '//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/keybrl-mines/image/theme_default/mine.png',
+        '//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/keybrl-mines/image/theme_default/overmine.png',
+        '//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/keybrl-mines/image/pause.png'
     );
 </script>
-<script src="../assets/javascripts/main.js"></script>
+<script src="//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/keybrl-mines/javascripts/main.js"></script>
 </body>
 </html>
