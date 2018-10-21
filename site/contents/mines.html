@@ -11,10 +11,6 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119555935-2"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','UA-119555935-2');</script>
 </head>
-<body class="main mines">
-<div class="loading">
-  <i class="fa fa-spinner fa-spin"></i>
-</div>
 <div class="center-block" id="container">
   <div class="mines minefield">
     <table id="minefield">
@@ -92,6 +88,7 @@
 <script src="//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/useful/vue-v2.5.17/vue.min.js"></script>
 <script src="//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/useful/jquery/jquery-3.3.1.min.js"></script>
 <script src="//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/useful/bootstrap-v3.3.7/js/bootstrap.min.js"></script>
+<script src="//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/keybrl-mines/javascripts/main.js"></script>
 <script src="//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/keybrl-mines/javascripts/mines.js"></script>
 <script>
   let container_min_width = 30 * minefield_width + 174;
@@ -130,32 +127,5 @@
       }).resize();
   });
 </script>
-<script>
-    let images = [];
-    function preload() {
-        for (let i = 0; i < preload.arguments.length; i++) {
-            images[i] = new Image();
-            images[i].src = preload.arguments[i]
-        }
-    }
-    preload(
-        '//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/keybrl-mines/image/theme_default/1mines.png',
-        '//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/keybrl-mines/image/theme_default/2mines.png',
-        '//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/keybrl-mines/image/theme_default/3mines.png',
-        '//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/keybrl-mines/image/theme_default/4mines.png',
-        '//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/keybrl-mines/image/theme_default/5mines.png',
-        '//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/keybrl-mines/image/theme_default/6mines.png',
-        '//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/keybrl-mines/image/theme_default/7mines.png',
-        '//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/keybrl-mines/image/theme_default/8mines.png',
-        '//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/keybrl-mines/image/theme_default/exploded.png',
-        '//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/keybrl-mines/image/theme_default/flag.png',
-        '//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/keybrl-mines/image/theme_default/incorrect.png',
-        '//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/keybrl-mines/image/theme_default/maybe.png',
-        '//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/keybrl-mines/image/theme_default/mine.png',
-        '//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/keybrl-mines/image/theme_default/overmine.png',
-        '//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/keybrl-mines/image/pause.png'
-    );
-</script>
-<script src="//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/keybrl-mines/javascripts/main.js"></script>
 </body>
 </html>

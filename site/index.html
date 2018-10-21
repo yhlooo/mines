@@ -39,5 +39,32 @@
   console.log('作者邮箱：keyboard-l@outlook.com');
   console.log('欢迎各位强者提出意见啦！！');
 </script>
+<script>
+    let images = [];
+    function preload() {
+        for (let i = 0; i < preload.arguments.length; i++) {
+            images[i] = new Image();
+            images[i].src = preload.arguments[i]
+        }
+
+    }
+    preload(
+        '//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/keybrl-mines/image/theme_default/1mines.png',
+        '//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/keybrl-mines/image/theme_default/2mines.png',
+        '//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/keybrl-mines/image/theme_default/3mines.png',
+        '//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/keybrl-mines/image/theme_default/4mines.png',
+        '//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/keybrl-mines/image/theme_default/5mines.png',
+        '//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/keybrl-mines/image/theme_default/6mines.png',
+        '//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/keybrl-mines/image/theme_default/7mines.png',
+        '//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/keybrl-mines/image/theme_default/8mines.png',
+        '//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/keybrl-mines/image/theme_default/exploded.png',
+        '//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/keybrl-mines/image/theme_default/flag.png',
+        '//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/keybrl-mines/image/theme_default/incorrect.png',
+        '//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/keybrl-mines/image/theme_default/maybe.png',
+        '//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/keybrl-mines/image/theme_default/mine.png',
+        '//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/keybrl-mines/image/theme_default/overmine.png',
+        '//keybrl-webapp.oss-cn-shenzhen.aliyuncs.com/keybrl-mines/image/pause.png'
+    );
+</script>
 </body>
 </html>

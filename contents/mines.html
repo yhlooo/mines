@@ -11,10 +11,6 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <!-- google analytics statement -->
 </head>
-<body class="main mines">
-<div class="loading">
-  <i class="fa fa-spinner fa-spin"></i>
-</div>
 <div class="center-block" id="container">
   <div class="mines minefield">
     <table id="minefield">
@@ -92,6 +88,7 @@
 <script src="../assets/packages/vue-v2.5.17/vue.min.js"></script>
 <script src="../assets/packages/jquery/jquery-3.3.1.min.js"></script>
 <script src="../assets/packages/bootstrap-v3.3.7/js/bootstrap.min.js"></script>
+<script src="../assets/javascripts/main.js"></script>
 <script src="../assets/javascripts/mines.js"></script>
 <script>
   let container_min_width = 30 * minefield_width + 174;
@@ -130,32 +127,5 @@
       }).resize();
   });
 </script>
-<script>
-    let images = [];
-    function preload() {
-        for (let i = 0; i < preload.arguments.length; i++) {
-            images[i] = new Image();
-            images[i].src = preload.arguments[i]
-        }
-    }
-    preload(
-        '../assets/image/theme_default/1mines.png',
-        '../assets/image/theme_default/2mines.png',
-        '../assets/image/theme_default/3mines.png',
-        '../assets/image/theme_default/4mines.png',
-        '../assets/image/theme_default/5mines.png',
-        '../assets/image/theme_default/6mines.png',
-        '../assets/image/theme_default/7mines.png',
-        '../assets/image/theme_default/8mines.png',
-        '../assets/image/theme_default/exploded.png',
-        '../assets/image/theme_default/flag.png',
-        '../assets/image/theme_default/incorrect.png',
-        '../assets/image/theme_default/maybe.png',
-        '../assets/image/theme_default/mine.png',
-        '../assets/image/theme_default/overmine.png',
-        '../assets/image/pause.png'
-    );
-</script>
-<script src="../assets/javascripts/main.js"></script>
 </body>
 </html>
