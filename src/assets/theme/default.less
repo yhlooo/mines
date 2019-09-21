@@ -1,0 +1,62 @@
+@font-color: #4c4c4c;
+@font-disabled-color: #97948f;
+@main-bg-color: #f2f1f0;
+
+@cell-color: #babdb6;
+@cell-die-color: #888a85;
+@cell-hover-color: #d3d7cf;
+@cell-opened-color: #dededc;
+
+@cell-1mines-bg: url('default/1mines.png') no-repeat center;
+@cell-2mines-bg: url('default/2mines.png') no-repeat center;
+@cell-3mines-bg: url('default/3mines.png') no-repeat center;
+@cell-4mines-bg: url('default/4mines.png') no-repeat center;
+@cell-5mines-bg: url('default/5mines.png') no-repeat center;
+@cell-6mines-bg: url('default/6mines.png') no-repeat center;
+@cell-7mines-bg: url('default/7mines.png') no-repeat center;
+@cell-8mines-bg: url('default/8mines.png') no-repeat center;
+@cell-exploded-bg: url('default/exploded.png') no-repeat center;
+@cell-flag-bg: url('default/flag.png') no-repeat center;
+@cell-incorrect-bg: url('default/incorrect.png') no-repeat center;
+@cell-maybe-bg: url('default/maybe.png') no-repeat center;
+@cell-mine-bg: url('default/mine.png') no-repeat center;
+@cell-overmine-bg: url('default/overmine.png') no-repeat center;
+
+@minefield-pause-bg: url('default/pause.png') no-repeat center;
+
+@btn-bg: linear-gradient(to bottom, #ffffff , #eae8e7);
+@btn-hover-bg: linear-gradient(to bottom, #ffffff , #f0efee);
+@btn-active-bg: linear-gradient(to bottom, #dcdcdc , #f5f5f5);
+@btn-disabled-bg: #efeeee;
+@btn-border-color: #b7b7b7 #b7b7b7 #959595 #b7b7b7;
+@btn-border-hover-color: #b7b7b7 #a5a5a5 #8d8d8d #a5a5a5;
+@btn-border-active-color: #df835f #cb6d46 #824e24 #cb6c46;
+@btn-border-disabled-color: #cacaca;
+
+@dialog-default-head-head-bg: linear-gradient(to bottom, #59574f , #403f3a);
+@font-dialog-light-color: #dfdbd2;
+@font-dialog-light-secondlevel-color: #918e87;
+@dialog-btn-done-bg: linear-gradient(to bottom, #48cc5b , #48a047);
+@dialog-btn-done-hover-bg: linear-gradient(to bottom, #38a047 , #367e40);
+@dialog-btn-done-active-bg: linear-gradient(to bottom, #3f8a49 , #33693b);
+
+.default-btn {
+  border-radius: 5px;
+  border: 1px solid;
+  border-color: @btn-border-color;
+  background: @btn-bg;
+  color: @font-color;
+  &:hover {
+    border-color: @btn-border-hover-color;
+    background: @btn-hover-bg;
+  }
+  &:active {
+    border-color: @btn-border-active-color;
+    background: @btn-active-bg;
+  }
+  &:disabled {
+    border-color: @btn-border-disabled-color;
+    background: @btn-disabled-bg;
+    color: @font-disabled-color;
+  }
+}

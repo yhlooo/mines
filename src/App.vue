@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
     <router-view/>
   </div>
 </template>
@@ -11,13 +10,28 @@ export default {
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="less">
+  @import 'assets/libs/fontawesome/css/all.css';
+
+  @font-face {
+    font-family: 'Ubuntu';
+    src: url('assets/fonts/Ubuntu-R.ttf');
+  }
+  @font-face {
+    font-family: 'Ubuntu Bold';
+    src: url('assets/fonts/Ubuntu-B.ttf');
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+  }
+  #app {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #ffffff;
+    width: 100vw;
+    height: 100vh;
+  }
 </style>
