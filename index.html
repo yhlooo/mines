@@ -1,70 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <title>Mines</title>
-  <link href="./assets/image/gnome-mines.png" rel="icon">
-  <link href="./assets/packages/bootstrap-v3.3.7/css/bootstrap.min.css" rel="stylesheet">
-  <link href="./assets/packages/font-awesome-v4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <link href="./assets/stylesheets/main.css" rel="stylesheet">
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <!-- google analytics statement -->
-</head>
-<body>
-<section>
-  <iframe class="content" src="./contents/difficulty.html" id="content"></iframe>
-</section>
-<footer class="project-info text-right">
-  <span class="pull-left">Copyright &copy; <a href="https://blog.keybrl.com/">KeybrL</a> All Rights Reserved.</span>
-  <a href="https://github.com/keybrl/keybrl-mines" target="_blank"><i class="fa fa-github"></i> keybrl/keybrl-mines</a>
-</footer>
-
-
-<!-- JavaScripts -->
-<script src="./assets/packages/jquery/jquery-3.3.1.min.js"></script>
-<script src="./assets/packages/bootstrap-v3.3.7/js/bootstrap.min.js"></script>
-<script>
-  $(document).ready(function() {
-      function resize_iframe(elem) {
-          elem.height($(window).height() - 45);
-      }
-      $(window).resize(function() {
-          resize_iframe($('#content'));
-      });
-      resize_iframe($('#content'));
-  });
-  console.log('你打开开发者工具栏，说明，这游戏还不赖吧（得意）。');
-  console.log('项目仓库地址：https://github.com/keybrl/keybrl-mines');
-  console.log('作者邮箱：keyboard-l@outlook.com');
-  console.log('欢迎各位强者提出意见啦！！');
-</script>
-<script>
-    let images = [];
-    function preload() {
-        for (let i = 0; i < preload.arguments.length; i++) {
-            images[i] = new Image();
-            images[i].src = preload.arguments[i]
-        }
-
-    }
-    preload(
-        './assets/image/theme_default/1mines.png',
-        './assets/image/theme_default/2mines.png',
-        './assets/image/theme_default/3mines.png',
-        './assets/image/theme_default/4mines.png',
-        './assets/image/theme_default/5mines.png',
-        './assets/image/theme_default/6mines.png',
-        './assets/image/theme_default/7mines.png',
-        './assets/image/theme_default/8mines.png',
-        './assets/image/theme_default/exploded.png',
-        './assets/image/theme_default/flag.png',
-        './assets/image/theme_default/incorrect.png',
-        './assets/image/theme_default/maybe.png',
-        './assets/image/theme_default/mine.png',
-        './assets/image/theme_default/overmine.png',
-        './assets/image/pause.png'
-    );
-</script>
-</body>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>keybrl-mines</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
 </html>
