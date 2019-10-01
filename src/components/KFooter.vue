@@ -1,9 +1,11 @@
 <template>
   <div class="footer">
     <div>Copyright &copy; <a href="https://github.com/keybrl/">KeybrL</a> All Rights Reserved.</div>
-    <div><a href="https://github.com/keybrl/keybrl-mines/">
-      <i class="fab fa-github"></i> keybrl/keybrl-mines
-    </a></div>
+    <div>
+      <a href="https://github.com/keybrl/keybrl-mines/">
+        <i class="fab fa-github"></i> keybrl/keybrl-mines
+      </a>
+    </div>
   </div>
 </template>
 

@@ -7,22 +7,22 @@
 @cell-hover-color: #d3d7cf;
 @cell-opened-color: #dededc;
 
-@cell-1mines-bg: url('default/1mines.png') no-repeat center;
-@cell-2mines-bg: url('default/2mines.png') no-repeat center;
-@cell-3mines-bg: url('default/3mines.png') no-repeat center;
-@cell-4mines-bg: url('default/4mines.png') no-repeat center;
-@cell-5mines-bg: url('default/5mines.png') no-repeat center;
-@cell-6mines-bg: url('default/6mines.png') no-repeat center;
-@cell-7mines-bg: url('default/7mines.png') no-repeat center;
-@cell-8mines-bg: url('default/8mines.png') no-repeat center;
-@cell-exploded-bg: url('default/exploded.png') no-repeat center;
-@cell-flag-bg: url('default/flag.png') no-repeat center;
-@cell-incorrect-bg: url('default/incorrect.png') no-repeat center;
-@cell-maybe-bg: url('default/maybe.png') no-repeat center;
-@cell-mine-bg: url('default/mine.png') no-repeat center;
-@cell-overmine-bg: url('default/overmine.png') no-repeat center;
+@cell-1mines-bg: url('default/1mines.png');
+@cell-2mines-bg: url('default/2mines.png');
+@cell-3mines-bg: url('default/3mines.png');
+@cell-4mines-bg: url('default/4mines.png');
+@cell-5mines-bg: url('default/5mines.png');
+@cell-6mines-bg: url('default/6mines.png');
+@cell-7mines-bg: url('default/7mines.png');
+@cell-8mines-bg: url('default/8mines.png');
+@cell-exploded-bg: url('default/exploded.png');
+@cell-flag-bg: url('default/flag.png');
+@cell-incorrect-bg: url('default/incorrect.png');
+@cell-maybe-bg: url('default/maybe.png');
+@cell-mine-bg: url('default/mine.png');
+@cell-overmine-bg: url('default/overmine.png');
 
-@minefield-pause-bg: url('default/pause.png') no-repeat center;
+@minefield-pause-bg: url('default/pause.png');
 
 @btn-bg: linear-gradient(to bottom, #ffffff , #eae8e7);
 @btn-hover-bg: linear-gradient(to bottom, #ffffff , #f0efee);
@@ -42,7 +42,8 @@
 
 .default-btn {
   border-radius: 5px;
-  border: 1px solid;
+  border-width: 1px;
+  border-style: solid;
   border-color: @btn-border-color;
   background: @btn-bg;
   color: @font-color;
