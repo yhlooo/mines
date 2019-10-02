@@ -19,7 +19,7 @@
             <div><img src="../assets/images/flag32.png" alt=""></div>
             <div class="info-value"><span>{{ flagsNum }}</span>/<span>{{ minesNum }}</span></div>
             <div><img src="../assets/images/clock32.png" alt=""></div>
-            <div class="info-value"><span id="timer">00:00</span></div>
+            <div class="info-value"><timer :status="timerStatus" :get-time="getTime"/></div>
           </div>
           <div class="menu-bottom">
             <button id="menu-btn0" @click="btnHandler(0)" :disabled="status === 'ready'">{{ btnLabel[0] }}</button>
@@ -32,8 +32,11 @@
 </template>
 
 <script>
+import Timer from '@/components/Timer'
+
 export default {
   name: 'Mines',
+  components: { Timer },
   props: {
     difficulty: Object
   },
@@ -41,6 +44,7 @@ export default {
   data () {
     return {
       status: 'ready', // 'ready', 'playing', 'die', 'win' or 'pause'
+      timerStatus: 'pause',
       centerBlockWidth: 0,
       centerBlockHeight: 0,
       minefield: [],
@@ -51,8 +55,6 @@ export default {
       minesNum: this.difficulty.mines,
 
       flagsNum: 0,
-      beginTime: 0,
-      storeTime: 0,
       openedNum: 0
     }
   },
@@ -168,6 +170,7 @@ export default {
         this.status = 'playing'
         this.loadMines(row, col)
         this.openCell(row, col)
+        this.timerStatus = 'start'
       } else if (this.status === 'playing') {
         let cell = this.minefield[row][col]
         if (cell.status === 'unknown' || cell.status === 'maybe') {
@@ -194,6 +197,7 @@ export default {
       if (cell.mine === -1) {
         // 开到雷
         this.status = 'die'
+        this.timerStatus = 'pause'
       }
       this.openedNum += 1
       if (cell.mine === 0) {
@@ -264,8 +268,10 @@ export default {
     pauseGame () {
       if (this.status === 'playing') {
         this.status = 'pause'
+        this.timerStatus = 'pause'
       } else if (this.status === 'pause') {
         this.status = 'playing'
+        this.timerStatus = 'start'
       }
     },
     btnHandler (btnId) {
@@ -282,6 +288,9 @@ export default {
 
     win () {
       //
+    },
+
+    getTime () {
     }
 
   }
