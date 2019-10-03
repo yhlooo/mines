@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/layouts/Home'
+import DifficultySelector from '@/components/DifficultySelector'
+import Mines from '@/components/Mines'
 
 Vue.use(Router)
 
@@ -9,7 +11,18 @@ export default new Router({
     {
       path: '/',
       name: 'Home',
-      component: Home
+      component: Home,
+      children: [
+        {
+          path: 'difficulty',
+          name: 'Difficulty',
+          component: DifficultySelector
+        }, {
+          path: 'game/:width/:height/:mines',
+          name: 'Mines',
+          component: Mines
+        }
+      ]
     }
   ]
 })

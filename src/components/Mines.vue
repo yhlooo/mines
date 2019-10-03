@@ -38,7 +38,9 @@ export default {
   name: 'Mines',
   components: { Timer },
   props: {
-    difficulty: Object
+    height: Number,
+    width: Number,
+    mines: Number
   },
 
   data () {
@@ -49,13 +51,15 @@ export default {
       centerBlockHeight: 0,
       minefield: [],
 
-      // 一次性确定游戏参数，无法在游戏中改变
-      minefieldWidth: this.difficulty.width,
-      minefieldHeight: this.difficulty.height,
-      minesNum: this.difficulty.mines,
+      // 游戏难度参数
+      minefieldWidth: 0,
+      minefieldHeight: 0,
+      minesNum: 0,
 
       flagsNum: 0,
-      openedNum: 0
+      openedNum: 0,
+      gameDuration: -1,
+      getTimeCallback: null
     }
   },
 
@@ -70,25 +74,25 @@ export default {
   },
 
   watch: {
-    openedNum (newVal, oldVal) {
-      if (newVal === this.minefieldHeight * this.minefieldWidth - this.minesNum && this.status === 'playing') {
-        this.status = 'win'
-      }
-    },
-    status (newVal, oldVal) {
-      if (newVal === 'win') {
+    openedNum (val) {
+      if (val === this.minefieldHeight * this.minefieldWidth - this.minesNum && this.status === 'playing') {
         this.win()
       }
     }
   },
 
   mounted () {
-    // 自适应窗口大小
-    this.resizeContainer()
-    window.onresize = this.resizeContainer
+    // 获得参数
+    this.minefieldWidth = this.width ? this.width : this.$route.params.width
+    this.minefieldHeight = this.height ? this.height : this.$route.params.height
+    this.minesNum = this.mines ? this.mines : this.$route.params.mines
 
     // 创建雷区
     this.createMinefield()
+
+    // 自适应窗口大小
+    this.resizeContainer()
+    window.onresize = this.resizeContainer
   },
 
   methods: {
@@ -128,7 +132,7 @@ export default {
       // 确定可选位置，开场位置和其周围 8 格都不能有雷
       let choices = []
       for (let row = 0; row < this.minefieldHeight; row++) {
-        for (let col = 0; col < this.minefieldHeight; col++) {
+        for (let col = 0; col < this.minefieldWidth; col++) {
           if (row < centerRow - 1 || row > centerRow + 1 || col < centerCol - 1 || col > centerCol + 1) {
             choices[choices.length] = [row, col]
           }
@@ -263,8 +267,18 @@ export default {
       }
     },
 
-    startOver () {},
-    changeDiff () {},
+    resetGame () {
+      this.createMinefield()
+      this.status = 'ready'
+      this.timerStatus = 'reset'
+      this.flagsNum = 0
+      this.openedNum = 0
+      this.gameDuration = -1
+      this.getTimeCallback = null
+    },
+    changeDiff () {
+      return this.$router.push('/difficulty')
+    },
     pauseGame () {
       if (this.status === 'playing') {
         this.status = 'pause'
@@ -276,21 +290,43 @@ export default {
     },
     btnHandler (btnId) {
       if (btnId === 0) {
-        //
+        this.resetGame()
       } else if (btnId === 1) {
-        //
+        if (this.status === 'ready' || this.status === 'playing' || this.status === 'pause') {
+          this.changeDiff()
+        } else if (this.status === 'die') {
+          // TODO: 排行榜有待开发
+        }
       } else if (btnId === 2) {
         if (this.status === 'playing' || this.status === 'pause') {
           this.pauseGame()
+        } else if (this.status === 'die') {
+          this.changeDiff()
         }
       }
     },
 
     win () {
-      //
+      this.status = 'win'
+      if (this.gameDuration === -1) {
+        this.timerStatus = 'pause'
+        this.getTimeCallback = this.win
+        this.timerStatus = 'output'
+        return
+      }
+      let minutes = Math.floor(this.gameDuration / 60)
+      let seconds = this.gameDuration % 60
+
+      // TODO: 排行榜功能有待开发
+      alert('太强了，你完成了！只用了' + minutes + '分' + seconds + '秒！\n由于排行榜还在开发中，所以目前你只能自己记着啦😊...')
+      this.resetGame()
     },
 
-    getTime () {
+    getTime (val) {
+      this.gameDuration = val
+      if (this.getTimeCallback) {
+        this.getTimeCallback()
+      }
     }
 
   }
